@@ -1,0 +1,232 @@
+<section
+  id="contact"
+  class="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a] py-24"
+  aria-labelledby="contact-heading"
+>
+  @for (shape of shapes; track shape.color + shape.top) {
+    <div
+      class="shape"
+      [style.top]="shape.top" [style.left]="shape.left"
+      [style.width]="shape.width" [style.height]="shape.height"
+      [style.background-color]="shape.color" [style.--rotate]="shape.rotate"
+      [style.border-radius]="shape.borderRadius"
+      [style.animation]="'floatShape 9s ease-in-out ' + shape.delay + ' infinite'"
+      aria-hidden="true"
+    ></div>
+  }
+
+  <div class="container mx-auto px-8 lg:px-16 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Info de contacto -->
+      <div>
+        <p class="text-[#ff4d8d] text-xs tracking-[0.4em] uppercase font-semibold mb-4">Hablemos</p>
+        <h2
+          id="contact-heading"
+          class="display-text leading-none text-white mb-6"
+          style="font-size: clamp(3rem, 8vw, 7rem);"
+        >
+          CONTÁCTAME
+          <span style="-webkit-text-stroke: 1px rgba(255,255,255,0.35); color: transparent;">CONMIGO</span>
+        </h2>
+
+        <div class="w-12 h-0.5 bg-[#ff4d8d] mb-8"></div>
+
+        <p class="text-white/40 text-sm leading-relaxed mb-12 max-w-sm">
+          ¿Tienes un proyecto en mente o quieres colaborar? Me encantaría escucharte.
+          Completa el formulario o contáctame directamente.
+        </p>
+
+        <address class="not-italic space-y-6">
+          @for (info of contactInfo; track info.label) {
+            <a [href]="info.href" class="flex items-center gap-4 group" [attr.aria-label]="info.label + ': ' + info.value">
+              <div class="w-10 h-10 border border-white/10 flex items-center justify-center group-hover:border-[#ff4d8d]/50 transition-colors duration-300 flex-shrink-0">
+                @switch (info.icon) {
+                  @case ('email') {
+                    <svg class="w-4 h-4 text-[#ff4d8d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  }
+                  @case ('phone') {
+                    <svg class="w-4 h-4 text-[#ff4d8d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.47 19.79 19.79 0 01.79 4.74 2 2 0 012.78 2.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 10.1a16 16 0 006 6l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                  }
+                  @case ('location') {
+                    <svg class="w-4 h-4 text-[#ff4d8d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  }
+                }
+              </div>
+              <div>
+                <p class="text-white/30 text-xs tracking-wider uppercase mb-0.5">{{ info.label }}</p>
+                <p class="text-white/80 text-sm group-hover:text-white transition-colors duration-300">{{ info.value }}</p>
+              </div>
+            </a>
+          }
+        </address>
+
+        <!-- Redes sociales -->
+        <div class="flex gap-4 mt-12" role="list" aria-label="Redes sociales">
+          @for (social of [
+            { name: 'GH', href: 'https://github.com/CamiloArturo98', label: 'GitHub' },
+            { name: 'LI', href: 'https://www.linkedin.com/in/camilo-arturo-8a81ab340/', label: 'LinkedIn' },
+            { name: 'TW', href: 'https://x.com/Milo_957', label: 'Twitter' }
+          ]; track social.name) {
+            <a
+              [href]="social.href"
+              class="w-10 h-10 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#ff4d8d]/50 text-xs font-bold tracking-wider transition-all duration-300"
+              [attr.aria-label]="social.label"
+              role="listitem"
+            >
+              {{ social.name }}
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div>
+        @if (isSubmitted()) {
+          <div class="flex flex-col items-center justify-center h-96 text-center" role="status" aria-live="polite">
+            <div class="w-16 h-16 border border-[#55efc4]/30 flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-[#55efc4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <h3 class="display-text text-3xl text-white mb-3">¡MENSAJE ENVIADO!</h3>
+            <p class="text-white/40 text-sm">Gracias por contactarme. Te responderé pronto.</p>
+          </div>
+        } @else {
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="space-y-8"
+            novalidate
+            aria-label="Formulario de contacto"
+          >
+            <!-- Nombre -->
+            <div>
+              <label for="contact-name" class="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                Nombre completo <span class="text-[#ff4d8d]" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                formControlName="name"
+                class="input-field"
+                placeholder="Juan García"
+                autocomplete="name"
+                [attr.aria-describedby]="isFieldInvalid('name') ? 'name-error' : null"
+                [attr.aria-invalid]="isFieldInvalid('name')"
+              />
+              @if (isFieldInvalid('name')) {
+                <p id="name-error" class="text-[#ff4d8d] text-xs mt-1" role="alert">
+                  Por favor ingresa tu nombre (mínimo 2 caracteres).
+                </p>
+              }
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="contact-email" class="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                Correo electrónico <span class="text-[#ff4d8d]" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-email"
+                type="email"
+                formControlName="email"
+                class="input-field"
+                placeholder="juan@ejemplo.com"
+                autocomplete="email"
+                [attr.aria-describedby]="isFieldInvalid('email') ? 'email-error' : null"
+                [attr.aria-invalid]="isFieldInvalid('email')"
+              />
+              @if (isFieldInvalid('email')) {
+                <p id="email-error" class="text-[#ff4d8d] text-xs mt-1" role="alert">
+                  Por favor ingresa un correo válido.
+                </p>
+              }
+            </div>
+
+            <!-- Asunto -->
+            <div>
+              <label for="contact-subject" class="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                Asunto <span class="text-[#ff4d8d]" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-subject"
+                type="text"
+                formControlName="subject"
+                class="input-field"
+                placeholder="Consulta sobre proyecto"
+                [attr.aria-describedby]="isFieldInvalid('subject') ? 'subject-error' : null"
+                [attr.aria-invalid]="isFieldInvalid('subject')"
+              />
+              @if (isFieldInvalid('subject')) {
+                <p id="subject-error" class="text-[#ff4d8d] text-xs mt-1" role="alert">
+                  Por favor ingresa un asunto.
+                </p>
+              }
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+              <label for="contact-message" class="block text-white/40 text-xs tracking-widest uppercase mb-2">
+                Mensaje <span class="text-[#ff4d8d]" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="contact-message"
+                formControlName="message"
+                class="input-field resize-none"
+                rows="4"
+                placeholder="Cuéntame sobre tu proyecto..."
+                [attr.aria-describedby]="isFieldInvalid('message') ? 'message-error' : null"
+                [attr.aria-invalid]="isFieldInvalid('message')"
+              ></textarea>
+              @if (isFieldInvalid('message')) {
+                <p id="message-error" class="text-[#ff4d8d] text-xs mt-1" role="alert">
+                  Por favor ingresa un mensaje (mínimo 10 caracteres).
+                </p>
+              }
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="btn-primary w-full flex items-center justify-center gap-3"
+              [disabled]="isSubmitting()"
+              [attr.aria-busy]="isSubmitting()"
+            >
+              @if (isSubmitting()) {
+                <svg class="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                </svg>
+                <span>Enviando...</span>
+              } @else {
+                <span>Enviar Mensaje</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              }
+            </button>
+          </form>
+        }
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-8 section-number" aria-hidden="true">05</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-0 left-0 right-0 border-t border-white/5 py-4 px-8 lg:px-16">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+      <p class="text-white/20 text-xs tracking-wider">© 2024 CAMO. Todos los derechos reservados.</p>
+      <p class="text-white/20 text-xs tracking-wider">
+        Hecho con <span class="text-[#ff4d8d]">Angular</span> &amp; <span class="text-[#4ecdc4]">Tailwind CSS</span>
+      </p>
+    </div>
+  </footer>
+</section>

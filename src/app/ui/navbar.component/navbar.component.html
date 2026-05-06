@@ -1,0 +1,74 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5"
+  role="banner"
+>
+  <!-- Logo -->
+  <a
+    href="#"
+    class="display-text text-2xl tracking-wider text-white hover:text-[#ff4d8d] transition-colors duration-300"
+    aria-label="Ir al inicio"
+  >
+    CAMILO<span class="text-[#ff4d8d]">.</span>
+  </a>
+
+  <!-- Decorative V -->
+  <div class="hidden lg:flex items-center opacity-20" aria-hidden="true">
+    <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+      <path d="M1 1L10 12L19 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav aria-label="Navegación principal" class="hidden md:block">
+    <ul class="flex items-center gap-10" role="list">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" class="nav-link">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <!-- Mobile burger -->
+  <button
+    class="md:hidden flex flex-col gap-1.5 p-2"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isMenuOpen()"
+    aria-controls="mobile-menu"
+    aria-label="Abrir menú"
+    type="button"
+  >
+    <span class="block w-6 h-0.5 bg-white transition-all duration-300"
+          [class.rotate-45]="isMenuOpen()" [class.translate-y-2]="isMenuOpen()"></span>
+    <span class="block w-6 h-0.5 bg-white transition-all duration-300"
+          [class.opacity-0]="isMenuOpen()"></span>
+    <span class="block w-6 h-0.5 bg-white transition-all duration-300"
+          [class.-rotate-45]="isMenuOpen()" [class.-translate-y-2]="isMenuOpen()"></span>
+  </button>
+</header>
+
+<!-- Mobile menu -->
+@if (isMenuOpen()) {
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-40 bg-[#0a0a0a]/98 flex flex-col items-center justify-center gap-8 md:hidden"
+    role="dialog"
+    aria-label="Menú de navegación"
+    aria-modal="true"
+  >
+    <ul class="flex flex-col items-center gap-8" role="list">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a href=""
+
+            [href]="link.href"
+            class="display-text text-5xl text-white hover:text-[#ff4d8d] transition-colors duration-300"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+}

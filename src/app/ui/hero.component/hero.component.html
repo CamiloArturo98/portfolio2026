@@ -1,0 +1,119 @@
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a] pt-20"
+  aria-labelledby="hero-heading"
+>
+  <!-- Floating shapes -->
+  @for (shape of shapes; track shape.color + shape.top) {
+    <div
+      class="shape"
+      [style.top]="shape.top"
+      [style.left]="shape.left"
+      [style.width]="shape.width"
+      [style.height]="shape.height"
+      [style.background-color]="shape.color"
+      [style.--rotate]="shape.rotate"
+      [style.border-radius]="shape.borderRadius"
+      [style.animation]="'floatShape 6s ease-in-out ' + shape.delay + ' infinite'"
+      aria-hidden="true"
+    ></div>
+  }
+
+  <!-- Grid pattern -->
+  <div
+    class="absolute inset-0 opacity-[0.03]"
+    style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container mx-auto px-8 lg:px-16 relative z-10">
+    <div class="grid lg:grid-cols-2 items-center gap-12 min-h-[80vh]">
+
+      <!-- Text -->
+      <div class="flex flex-col justify-center">
+        <p class="text-[#ff4d8d] text-xs tracking-[0.4em] uppercase font-semibold mb-6 animate-fade-up">
+          Full stack Developer
+        </p>
+
+        <div class="animate-fade-up-d1">
+          <h1
+            id="hero-heading"
+            class="display-text leading-none text-white"
+            style="font-size: clamp(4rem, 12vw, 9rem);"
+          >
+            CAMOART
+          </h1>
+          <p
+            class="display-text leading-none tracking-[0.15em]"
+            style="font-size: clamp(3rem, 9vw, 7rem); -webkit-text-stroke: 1px rgba(255,255,255,0.4); color: transparent;"
+          >
+            DEVELOPER
+          </p>
+        </div>
+
+        <div class="flex items-center gap-4 mt-8 mb-6 animate-fade-up-d2">
+          <div class="h-px bg-[#ff4d8d] w-16"></div>
+          <span class="text-white/30 text-xs tracking-widest uppercase">Mi trabajo</span>
+        </div>
+
+        <p class="text-white/50 text-sm leading-relaxed max-w-md animate-fade-up-d2">
+          Construyo experiencias digitales que no pasan desapercibidas.
+          Detalle extremo, código limpio y rendimiento real.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10 animate-fade-up-d3">
+
+          <a href="#projects" class="btn-primary inline-block">Ver Proyectos</a>
+
+          <a
+            href="#contact"
+            class="inline-block border border-white/20 text-white px-10 py-4 text-sm tracking-widest uppercase font-bold hover:border-[#ff4d8d] hover:text-[#ff4d8d] transition-all duration-300"
+          >
+            Contactar
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="flex justify-center lg:justify-end animate-fade-up-d1">
+        <div class="relative">
+          <!-- Decorative rings -->
+          <div class="absolute inset-0 rounded-full border border-[#ff4d8d]/20" style="transform:scale(1.12);" aria-hidden="true"></div>
+          <div class="absolute inset-0 rounded-full border border-white/5"       style="transform:scale(1.25);" aria-hidden="true"></div>
+
+          <!-- Corner accents -->
+          <div class="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-[#ff4d8d]" aria-hidden="true"></div>
+          <div class="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-[#ff4d8d]" aria-hidden="true"></div>
+
+          <!-- Photo container -->
+          <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#1a1a1a] border border-white/10">
+
+
+              <img src="assets/camilino.jpg" alt="Camilo" class="w-full h-full object-center grayscale" />
+
+            <div
+              class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a]"
+              role="img"
+              aria-label="Foto de perfil del desarrollador"
+            >
+              <svg class="w-40 h-40 text-white/10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a0a]/50" aria-hidden="true"></div>
+          </div>
+
+          <!-- Badge -->
+          <div class="absolute -right-4 top-1/2 -translate-y-1/2 bg-[#ff4d8d] text-white text-xs font-bold tracking-wider px-3 py-2 rotate-90 whitespace-nowrap" aria-hidden="true">
+            READY TO WORK
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section number -->
+    <div class="absolute bottom-8 left-8 section-number" aria-hidden="true">01</div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" aria-hidden="true"></div>
+</section>

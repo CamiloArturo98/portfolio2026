@@ -1,0 +1,58 @@
+<section
+  id="skills"
+  class="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a] py-24"
+  aria-labelledby="skills-heading"
+>
+  @for (shape of shapes; track shape.color + shape.top) {
+    <div
+      class="shape"
+      [style.top]="shape.top" [style.left]="shape.left"
+      [style.width]="shape.width" [style.height]="shape.height"
+      [style.background-color]="shape.color" [style.--rotate]="shape.rotate"
+      [style.border-radius]="shape.borderRadius"
+      [style.animation]="'floatShape 7s ease-in-out ' + shape.delay + ' infinite'"
+      aria-hidden="true"
+    ></div>
+  }
+
+  <div class="container mx-auto px-8 lg:px-16 relative z-10">
+    <div class="mb-16">
+      <p class="text-[#ff4d8d] text-xs tracking-[0.4em] uppercase font-semibold mb-4">Lo que sé</p>
+      <h2
+        id="skills-heading"
+        class="display-text leading-none text-white"
+        style="font-size: clamp(3rem, 8vw, 7rem);"
+      >
+        MIS HABILIDADES &
+        <span style="-webkit-text-stroke: 1px rgba(255,255,255,0.35); color: transparent;">EXPERIENCIA</span>
+      </h2>
+    </div>
+
+    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" role="list" aria-label="Habilidades técnicas">
+      @for (skill of skills; track skill.name) {
+        <li>
+          <div
+            class="skill-card"
+            [style.background-color]="skill.color"
+            [style.color]="skill.textColor"
+          >
+            {{ skill.name }}
+          </div>
+        </li>
+      }
+    </ul>
+
+    <div class="mt-16 flex flex-col md:flex-row items-start md:items-center gap-6">
+      <p class="text-white/30 text-sm leading-relaxed max-w-xl flex-1">
+        En constante aprendizaje — estas son las herramientas principales que uso a diario para
+        crear aplicaciones web modernas, escalables y accesibles.
+      </p>
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 bg-[#55efc4] rounded-full animate-pulse"></div>
+        <span class="text-white/40 text-xs tracking-widest uppercase">Aprendiendo ahora: JAVA + Spring</span>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-8 section-number" aria-hidden="true">03</div>
+  </div>
+</section>
