@@ -15,9 +15,8 @@ interface Shape {
 })
 export class AboutComponent {
   readonly stats: ReadonlyArray<Stat> = [
-    { value: '1+',  label: 'Años de experiencia' },
-    { value: '20+', label: 'Proyectos entregados' },
-    // { value: '15+', label: 'Clientes satisfechos' },
+    { value: '1+',  label: 'Years of exp' },
+    { value: '20+', label: 'Projects delivered' },
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [

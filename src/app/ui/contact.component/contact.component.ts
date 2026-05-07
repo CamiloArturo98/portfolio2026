@@ -30,8 +30,8 @@ export class ContactComponent {
 
   readonly contactInfo: ReadonlyArray<ContactInfo> = [
     { icon: 'email',    label: 'Email',      value: 'arturocamilo72@gmail.com',     href: 'mailto:arturocamilo72@gmail.com' },
-    { icon: 'phone',    label: 'Teléfono',   value: '+57 300 259 7905',             href: 'tel:+57 300 259 7905'            },
-    { icon: 'location', label: 'Ubicación',  value: 'San Juan de Pasto Colombia',   href: '#'                               },
+    { icon: 'phone',    label: 'Phone',      value: '+57 300 259 7905',             href: 'tel:+57 300 259 7905'            },
+    { icon: 'location', label: 'Location',   value: 'San Juan de Pasto Colombia',   href: '#'                               },
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [

@@ -24,13 +24,15 @@ export class SkillsComponent {
     { name: 'JavaScript',   color: '#ffeaa7', textColor: '#0a0a0a' },
     { name: 'React',        color: '#4ecdc4', textColor: '#0a0a0a' },
     { name: 'HTML5',        color: '#ff9f43', textColor: '#0a0a0a' },
-    { name: 'CSS3',  color: '#a29bfe', textColor: '#0a0a0a' },
+    { name: 'CSS3',         color: '#a29bfe', textColor: '#0a0a0a' },
     { name: 'Tailwind CSS', color: '#55efc4', textColor: '#0a0a0a' },
-    // { name: 'Node.js',      color: '#fd79a8', textColor: '#0a0a0a' },
+    { name: 'N8N',          color: '#fd79a8', textColor: '#0a0a0a' },
     { name: 'Git / GitHub', color: '#e17055', textColor: '#0a0a0a' },
     { name: 'REST APIs',    color: '#00cec9', textColor: '#0a0a0a' },
     { name: 'RxJS',         color: '#6c5ce7', textColor: '#ffffff' },
     { name: 'Figma',        color: '#fdcb6e', textColor: '#0a0a0a' },
+    { name: 'JAVA',         color: '#fdcb6e', textColor: '#0a0a0a' },
+    { name: 'Spring boot',  color: '#fdcb6e', textColor: '#0a0a0a' },
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [
