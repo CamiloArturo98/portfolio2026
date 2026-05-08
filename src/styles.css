@@ -13,13 +13,13 @@
     overflow-x: hidden;
   }
 
-  ::selection { background-color: #ff4d8d; color: #fff; }
+  ::selection { background-color: #f59e0b; color: #fff; }
 
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: #111; }
-  ::-webkit-scrollbar-thumb { background: #ff4d8d; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 2px; }
 
-  :focus-visible { outline: 2px solid #ff4d8d; outline-offset: 4px; }
+  :focus-visible { outline: 2px solid #f59e0b; outline-offset: 4px; }
 }
 
 @layer components {
@@ -44,7 +44,7 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #ff4d8d;
+    background-color: #f59e0b;
     transition: width 0.3s ease;
   }
   .nav-link:hover::after { width: 100%; }
@@ -62,22 +62,22 @@
   }
   .project-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(255,77,141,0.3);
-    box-shadow: 0 20px 60px rgba(255,77,141,0.1);
+    border-color: rgba(245, 158, 11, 0.22);
+    box-shadow: 0 20px 60px rgba(245, 158, 11, 0.08);
   }
 
   .input-field {
-    @apply w-full bg-transparent border-b border-white/20 py-3 px-0 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#ff4d8d] transition-colors duration-300;
+    @apply w-full bg-transparent border-b border-white/20 py-3 px-0 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#f59e0b] transition-colors duration-300;
     font-family: 'Syne', sans-serif;
   }
 
   .btn-primary {
-    @apply bg-[#ff4d8d] text-white px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all duration-300 cursor-pointer;
+    @apply bg-[#f59e0b] text-white px-10 py-4 text-sm tracking-widest uppercase font-bold transition-all duration-300 cursor-pointer;
   }
   .btn-primary:hover {
-    background-color: #ff2070;
+    background-color: #f59e0b;
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(255,77,141,0.4);
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.18);
   }
   .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 

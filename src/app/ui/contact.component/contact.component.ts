@@ -35,11 +35,11 @@ export class ContactComponent {
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [
-    { top: '10%', left: '4%',  width: '38px', height: '12px', color: '#4ecdc4', rotate: '22deg',  delay: '0s',   borderRadius: '3px' },
-    { top: '75%', left: '93%', width: '12px', height: '38px', color: '#ff4d8d', rotate: '-18deg', delay: '1.2s', borderRadius: '3px' },
-    { top: '88%', left: '8%',  width: '9px',  height: '9px',  color: '#a29bfe', rotate: '45deg',  delay: '0.8s', borderRadius: '2px' },
-    { top: '20%', left: '90%', width: '42px', height: '10px', color: '#ffeaa7', rotate: '-5deg',  delay: '1.6s', borderRadius: '3px' },
-    { top: '55%', left: '2%',  width: '10px', height: '32px', color: '#ff9f43', rotate: '30deg',  delay: '2.1s', borderRadius: '3px' },
+    { top: '10%', left: '4%',  width: '38px', height: '12px', color: '#f59e0b', rotate: '22deg',  delay: '0s',   borderRadius: '3px' },
+    { top: '75%', left: '93%', width: '12px', height: '38px', color: '#d97706', rotate: '-18deg', delay: '1.2s', borderRadius: '3px' },
+    { top: '88%', left: '8%',  width: '9px',  height: '9px',  color: '#fde68a', rotate: '45deg',  delay: '0.8s', borderRadius: '2px' },
+    { top: '20%', left: '90%', width: '42px', height: '10px', color: '#fbbf24', rotate: '-5deg',  delay: '1.6s', borderRadius: '3px' },
+    { top: '55%', left: '2%',  width: '10px', height: '32px', color: '#b45309', rotate: '30deg',  delay: '2.1s', borderRadius: '3px' },
   ];
 
   isFieldInvalid(field: string): boolean {

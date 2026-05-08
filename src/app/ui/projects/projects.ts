@@ -33,7 +33,7 @@ export class ProjectsComponent {
       subtitle: 'Interactive Compiler & Code Analysis Platform',
       description: 'Interactive compiler and code analysis platform built with Angular, TailwindCSS, Java and Spring Boot. Implements MiniScript, a custom programming language designed from scratch, allowing users to visualize every stage of the compilation process including tokenization, AST generation, bytecode execution and memory management. Features an integrated conversational assistant with persistent chat history for code-related support and analysis. The backend follows an MVC architecture and applies design patterns such as Strategy, Template Method and Factory Method to ensure scalability, modularity and maintainable compiler workflows.',
       tags: ['Angular', 'Java', 'PostgreSQL', 'Spring boot'],
-      accentColor: '#ff4d8d',
+      accentColor: '#d97706',
       liveUrl: 'https://minicompiler-front.vercel.app/',
       repoUrl: 'https://github.com/CamiloArturo98/minicompiler-backend.git',
       imageAlt: 'Screen shoot of mini-compiler UI',
@@ -46,7 +46,7 @@ export class ProjectsComponent {
       subtitle: 'Reactive search GIF platform',
       description: 'Reactive web application built with modern Angular and RxJS, designed to search and explore GIFs in real time through the Giphy API. Implements reactive data flows, optimized HTTP communication and persistent local storage for recent searches and user history. Focused on performance, scalable state handling and efficient integration with external APIs while delivering a fast and interactive user experience.',
       tags: ['TypeScript', 'Angular', 'HTML', 'Giphy API','HTTP Client', 'Reactive Programming'],
-      accentColor: '#a29bfe',
+      accentColor: '#d97706',
       liveUrl: 'https://gifs-app-pearl.vercel.app/dashboard/trending',
       repoUrl: 'https://github.com/CamiloArturo98/Gifs-app.git',
       imageAlt: 'Captura de GifsApp',
@@ -71,7 +71,7 @@ export class ProjectsComponent {
               'JWT',
               'Vercel',
               'Render'],
-      accentColor: '#4ecdc4',
+      accentColor: '#d97706',
       liveUrl: 'https://blender-threejs-mongo-me94-git-main-camilo-arturos-projects.vercel.app/',
       repoUrl: 'https://github.com/CamiloArturo98/Blender_Threejs_Mongo.git',
       imageAlt: 'Captura de un nivel del juego',
@@ -81,9 +81,9 @@ export class ProjectsComponent {
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [
-    { top: '8%',  left: '5%',  width: '40px', height: '12px', color: '#ff9f43', rotate: '-25deg', delay: '0s',   borderRadius: '3px' },
-    { top: '50%', left: '96%', width: '12px', height: '40px', color: '#55efc4', rotate: '20deg',  delay: '1s',   borderRadius: '3px' },
-    { top: '85%', left: '3%',  width: '8px',  height: '8px',  color: '#fd79a8', rotate: '45deg',  delay: '0.6s', borderRadius: '50%' },
-    { top: '20%', left: '93%', width: '36px', height: '10px', color: '#74b9ff', rotate: '-12deg', delay: '1.8s', borderRadius: '3px' },
+    { top: '8%',  left: '5%',  width: '40px', height: '12px', color: '#f59e0b', rotate: '-25deg', delay: '0s',   borderRadius: '3px' },
+    { top: '50%', left: '96%', width: '12px', height: '40px', color: '#d97706', rotate: '20deg',  delay: '1s',   borderRadius: '3px' },
+    { top: '85%', left: '3%',  width: '8px',  height: '8px',  color: '#fde68a', rotate: '45deg',  delay: '0.6s', borderRadius: '50%' },
+    { top: '20%', left: '93%', width: '36px', height: '10px', color: '#fbbf24', rotate: '-12deg', delay: '1.8s', borderRadius: '3px' },
   ];
 }
