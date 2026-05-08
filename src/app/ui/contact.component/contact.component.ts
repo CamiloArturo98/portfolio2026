@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 interface ContactInfo { readonly icon: string; readonly label: string; readonly value: string; readonly href: string; }
 interface Shape {
@@ -48,13 +49,32 @@ export class ContactComponent {
   }
 
   onSubmit(): void {
-    if (this.contactForm.invalid) { this.contactForm.markAllAsTouched(); return; }
-    this.isSubmitting.set(true);
-    // Reemplaza este setTimeout con tu llamada real a la API
-    setTimeout(() => {
-      this.isSubmitting.set(false);
-      this.isSubmitted.set(true);
-      this.contactForm.reset();
-    }, 1500);
+    if (this.contactForm.invalid) {
+    this.contactForm.markAllAsTouched();
+    return;
+  }
+
+  this.isSubmitting.set(true);
+
+  emailjs.send(
+    'service_k985suq',
+    'template_qu8d6jg',
+    {
+      from_name: this.contactForm.value.name,
+      from_email: this.contactForm.value.email,
+      subject: this.contactForm.value.subject,
+      message: this.contactForm.value.message,
+    },
+    'hrfIyP39VSCyMVgrn'
+  )
+  .then(() => {
+    this.isSubmitting.set(false);
+    this.isSubmitted.set(true);
+    this.contactForm.reset();
+  })
+  .catch((error) => {
+    console.error(error);
+    this.isSubmitting.set(false);
+  });
   }
 }
