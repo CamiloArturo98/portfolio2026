@@ -60,9 +60,8 @@ export class ContactComponent {
     'service_k985suq',
     'template_qu8d6jg',
     {
-      from_name: this.contactForm.value.name,
-      from_email: this.contactForm.value.email,
-      subject: this.contactForm.value.subject,
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
       message: this.contactForm.value.message,
     },
     'hrfIyP39VSCyMVgrn'
