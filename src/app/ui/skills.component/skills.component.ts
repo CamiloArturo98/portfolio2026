@@ -33,6 +33,8 @@ export class SkillsComponent {
     { name: 'Figma',        color: '#fde68a', textColor: '#0a0a0a' },
     { name: 'JAVA',         color: '#d97706', textColor: '#ffffff' },
     { name: 'Spring boot',  color: '#b45309', textColor: '#ffffff' },
+    { name: 'NestJs',  color: '#b45309', textColor: '#ffffff' },
+    { name: 'NodeJs',  color: '#b45309', textColor: '#ffffff' },
   ];
 
   readonly shapes: ReadonlyArray<Shape> = [
